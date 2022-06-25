@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Template Definition -->
+    <definition name="home-template-def"
+      template="/WEB-INF/views/tiles/layouts/homeLayout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/WEB-INF/views/tiles/templates/header.jsp"/>
+        <put-attribute name="nav" value="/WEB-INF/views/tiles/templates/nav.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/templates/footer.jsp"/>
+    </definition>
+
+    <definition name="free-template-def"
+      template="/WEB-INF/views/tiles/layouts/freeLayout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="body" value=""/>
+    </definition>
+
+    <!-- Home Pages -->
+    <definition name="index" extends="home-template-def">
+        <put-attribute name="title" value="Welcome"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/index.jsp"/>
+    </definition>
+
+    <definition name="login" template="/WEB-INF/views/pages/login.jsp">
+        <put-attribute name="title" value="Sign in"/>
+    </definition>
+
+    <!--Bear Pages-->
+    <definition name="bear-template-def"
+      template="/WEB-INF/views/tiles/layouts/bearLayout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/WEB-INF/views/tiles/templates/header.jsp"/>
+        <put-attribute name="nav" value="/WEB-INF/views/tiles/templates/bear/nav.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/templates/footer.jsp"/>
+    </definition>
+
+    <definition name="bear-dashboard" extends="bear-template-def">
+        <put-attribute name="title" value="Bear Dashboard"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/bear/dashboard/dashboard.jsp"/>
+    </definition>
+
+    <definition name="user" extends="bear-template-def">
+        <put-attribute name="title" value="User Detail"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/bear/user/user.jsp"/>
+    </definition>
+
+    <definition name="user-detail" extends="bear-template-def">
+        <put-attribute name="title" value="User Detail"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/bear/user/user-detail.jsp"/>
+    </definition>
+
+    <!-- Expense Note Pages -->
+    <definition name="expense-note-template-def"
+      template="/WEB-INF/views/tiles/layouts/dashboardLayout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/WEB-INF/views/tiles/templates/header.jsp"/>
+        <put-attribute name="nav" value="/WEB-INF/views/tiles/templates/expenseNote/nav.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/templates/footer.jsp"/>
+    </definition>
+
+    <definition name="expense-note-dashboard" extends="expense-note-template-def">
+        <put-attribute name="title" value="Expense Note Dashboard"/>
+        <put-attribute name="body" value="/WEB-INF/views/pages/expenseNote/dashboard/dashboard.jsp"/>
+    </definition>
+</tiles-definitions>
